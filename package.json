@@ -1,0 +1,15 @@
+{
+  "name": "easy-use-storage",
+  "version": "1.0.1",
+  "description": "New storage API that can help user set expired time and no need to use JSON.parse in most scenarios.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Storage",
+    "API"
+  ],
+  "author": "kame",
+  "license": "ISC"
+}
