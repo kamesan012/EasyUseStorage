@@ -1,13 +1,13 @@
 // EP: Enter parameters 入参
 interface ISetEP {
-    key: string; value: string | Record<string, unknown>; deep?: boolean; needExpire?: boolean; expireTimeout?: number | null;
+    key: string; value: any; deep?: boolean; needExpire?: boolean; expireTimeout?: number | null;
 }
 interface IGetEp {
     key: string; deep?: boolean;
 }
 interface IStore {
     set({ key, value, deep, needExpire, expireTimeout }: ISetEP): void;
-    get({ key, deep }: IGetEp): string | Record<string, unknown> | null;
+    get({ key, deep }: IGetEp): any;
 }
 const defaultTimeout = 7 * 24 * 60 * 60 * 1000
 const store: IStore = {
@@ -49,7 +49,7 @@ const store: IStore = {
         if (storageObject !== null) {
             const { value, type, expireTime } = storageObject
             const currentTime = new Date().getTime()
-            // 判断是否设置过期时间，如设置了是否以及过期
+            // 判断是否设置过期时间，如设置了是否已经过期
             if (expireTime && expireTime < currentTime) {
                 // 已过期的参数直接从本地移除
                 storage.removeItem(key)
