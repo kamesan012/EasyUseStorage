@@ -1,4 +1,4 @@
-# Easy-use-storage v1.0.0
+# Easy-use-storage v1.0.2
 
 New storage API that can help user set expired time and no need to use JSON.parse in most scenarios.
 
